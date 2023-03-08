@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DARKROOM PHOTO QUOTES</title>
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Indie+Flower&family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet">
+	<style type="text/css">
+		
+
+				body {
+
+
+						margin: 0;
+						padding: 0;
+						height: 100vh;
+/*						background-image: url("../usp/Temple_of_creativeness_50.jpeg");   */
+						background-size: cover;
+						background-repeat: no-repeat;
+				}
+
+
+				img {
+
+
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						background-color: red;
+    					background-blend-mode: color-dodge;
+				}
+
+
+
+
+
+				.text {
+
+
+						position: fixed;
+					    margin-top: -100vh;
+					    margin-left: 0;
+					    text-align: center;
+					    width: 100%;
+					    height: 100vh;
+					    outline: none;
+					    box-sizing: border-box;					    
+					    resize: none;
+
+					    display: grid;
+					    justify-items: center;
+					    align-items: center;
+
+
+				}
+
+
+				.inward {
+
+
+						    display: flex;
+						    flex-direction: column;
+						    justify-content: space-around;
+						    align-items: center;
+						    width: 75%;
+						    height: 75vh;
+						    background-color: #ff00007d;
+						    border: dashed 10px #000000;
+
+				}
+
+				blockquote {
+
+
+							height: auto;
+							width: 70%;
+							display: grid;
+							justify-content: center;
+							align-items: center;
+							font-family: 'Special Elite', cursive;
+							font-family: 'Indie Flower', cursive;
+						    font-family: 'Amatic SC', cursive;
+						    font-size: 6vh;
+						    letter-spacing: 1px;
+						    line-height: 8vh;
+						    font-weight: 600;
+						    color: #ffffff;
+
+
+
+				}
+
+
+				.name {
+
+
+						height: auto;
+						display: grid;
+						justify-content: center;
+						align-items: center;
+						font-family: 'Press Start 2P', cursive;
+
+						font-size: 8vh;
+    					font-weight: 900;
+
+				}
+
+
+				.menu {
+
+
+						width: 20%;
+						height: 64px;
+						position: fixed;
+						margin-top: 0vh;
+						margin-left: 80%;
+
+						display: flex;
+						justify-content: flex-end;
+						align-items: center;
+						box-sizing: border-box;
+						z-index: 5;
+				}
+
+
+				#menu {
+
+
+						padding-right: 32px;
+						cursor: pointer;
+				}
+
+				.logo {
+
+						position: fixed;
+						margin-top: 2vh;
+						margin-left: 32px;
+						width: 133px;
+						height: 60px;
+						background-image: url("dark-room-quotes-logo.png");
+						z-index: 5;
+				}
+
+
+				.add {
+
+
+						display: none;
+
+
+				}
+
+
+				button {
+
+
+						cursor: pointer;
+				}
+
+				#qf1 {
+
+
+							height: 40vh;
+							width: 70%;	
+
+							border: none;
+							border-bottom: solid 1px;
+							text-align: center;
+							display: grid;
+							align-content: center;
+							align-items: center;	
+							resize: none;
+
+							font-size: 4vh;
+
+				}
+
+				#qf2,#qf3 {
+
+
+						height: 10vh;
+						width: 70%;
+
+							border: none;
+							border-bottom: solid 1px;
+							text-align: center;
+							display: grid;
+							align-content: center;
+							align-items: center;
+
+							font-size: 3vh;
+				}
+
+
+				button {
+
+
+						width: 70%;
+						height: 15vh;
+						background-color: #e82b2b;
+						font-size: 5vh;
+						font-weight: 900;
+						color: #ffffff;
+				}
+
+
+
+
+
+
+
+	</style>
+
+
+	<script src='../fontAwesome.js'></script>
+
+
+</head>
+			<body onload="pastePhoto(), randomQuote();">
+
+								<div class="logo"></div>
+
+								<div class="menu">
+									
+													<i style="color: #ff00007d;" id="menu" onclick="addNew();" class="fas tools fa-plus" style="font-size:32px;"></i>
+
+													<i style="color: #ff00007d;" id="menu" onclick="pastePhoto();" class="fas tools fa-redo" style="font-size:32px;"></i>
+
+								</div>
+
+
+
+								<img src="">
+
+
+
+
+
+								<div id="text" class="text">
+									
+
+									<div class="inward">
+
+											<blockquote id="quote">"We do not have to be ashamed of what we are. As sentient beings we have wonderful backgrounds. These backgrounds may not be particularly enlightened or peaceful or intelligent. Nevertheless, we have soil good enough to cultivate; we can plant anything in it."</blockquote>
+											<div id="name" class="name">CHOGYAM TRUNGPA</div>
+
+									</div>
+
+
+								</div>
+
+
+
+
+									
+
+
+										<input type="hidden" id="h_quote" name="">	
+
+										<input type="hidden" id="h_author" name="">	
+
+										<input type="hidden" id="h_keywords" name="">
+
+
+						
+
+
+
+
+
+
+			</body>
+
+
+
+<script>
+
+			let qf1 = document.getElementById('qf1');
+			let qf2 = document.getElementById('qf2');
+			let qf3 = document.getElementById('qf3');
+
+			let h_quote = document.getElementById('h_quote');
+			let h_author = document.getElementById('h_author');
+			let h_keywords = document.getElementById('h_keywords');
+
+			let quote = document.getElementById('quote');
+			let name = document.getElementById('name');
+
+			let img = document.getElementsByTagName('img');
+
+			let comma='';
+
+
+				function pastePhoto(){
+
+
+							comma+=',';
+
+
+
+							let n = Math.floor(Math.random() * 82);
+
+							if(n<10) {
+
+										n="0"+n;
+							}
+
+
+
+							if(h_keywords.value!=''){
+
+										let r_url = "https://source.unsplash.com/random/?"+h_keywords.value+comma;
+
+
+										img[0].src=r_url;
+
+
+
+							}
+
+
+							else {
+
+									let photo = "https://source.unsplash.com/random/?soil,goodness,cultivate"+comma;
+
+
+									img[0].src=photo;
+
+							}
+
+
+				}
+
+
+				function randomQuote() {
+
+
+
+
+				}
+
+
+				function addNew() {
+
+
+							let inward = document.getElementsByClassName('inward');
+							inward[0].style.display='none';
+
+							let add = '<textarea onkeyup="showPhotoQuote(this.value,this.id);" id="qf1" placeholder="Enter A Quote"></textarea><input onkeyup="showPhotoQuote(this.value,this.id);" type="text" id="qf2" name="" placeholder="Enter Author Name"><input onkeyup="showPhotoQuote(this.value,this.id);" type="text" id="qf3" name="" placeholder="Enter photo keywords separated by comma"><button id="btn" onclick="showPhotoQuote(this.value, this.id);">DONE</button>';
+
+							document.getElementById('text').innerHTML=add;
+
+
+
+
+
+				}
+
+
+				function showPhotoQuote(v,id){
+
+
+							if(id=='qf1'){
+
+							h_quote.value=v;
+
+							}
+
+							else if(id=='qf2'){
+
+								h_author.value=v;
+
+
+							}
+
+							else if(id=='qf3'){
+
+								h_keywords.value=v;
+							}
+
+							else {
+
+									document.getElementById('text').innerHTML='<div class="inward"><blockquote id="blockq">'+h_quote.value+'</blockquote><div class="name" id="nameq">'+h_author.value+'</div></div>';
+
+								
+
+
+									let url = "https://source.unsplash.com/random/?"+h_keywords.value;
+
+									img[0].src=url;
+
+									comma='';
+
+							}
+
+
+
+				}
+
+</script>
+
+
+</html>
